@@ -1,12 +1,34 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header>
   <div class="container">
-    <%= link_to "MM_APLI", home_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   home_path  %></li>
-        <li><%= link_to "Help",   help_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
-      </ul>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(#F89174,#FFC778);" >
+
+
+
+
+  
+  <%= link_to "MM_APLI", home_path, id: "logo" , class:"navbar-brand mr-5" %>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item active mr-5">
+          <%= link_to "Home",   home_path, {class: "nav-link"}  %>
+      </li>
+      
+      <li class="nav-item mr-5">
+          <%= link_to "Help",   help_path, {class: "nav-link"}  %>
+      </li>
+      
+      <li class="nav-item mr-5">
+          <%= link_to "Log in", help_path , {class: "nav-link"}  %>
+      </li>
+      
+      
+    </ul>
+  </div>
+</nav>
   </div>
 </header>
