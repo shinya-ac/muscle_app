@@ -1,4 +1,4 @@
-<body>
+
 <div class="container" style="margin-top: 5%;">
   <div class="row">
     <div class="col-sm-4"> </div>
@@ -11,6 +11,7 @@
 <br/>
       
 <%= form_with(model: @user, local: true) do |f| %>
+<%= render 'shared/error_messages' %>
 
   <div class="form-group">
     <%=f.label :名前 %>
@@ -19,24 +20,30 @@
   
   <div class="form-group">
     <%=f.label :メールアドレス %>
-    <%=f.email_field :name, class:"form-control", id:"email"%>
+    <%=f.email_field :email, class:"form-control", id:"email"%>
   </div>
 
   <div class="form-group">
     <%=f.label :パスワード %>
-    <%=f.password_field :name, class:"form-control", id:"pwd"%>
+    <%=f.password_field :password, class:"form-control", id:"pwd"%>
   </div>
 
   <div class="form-group">
     <%=f.label :パスワード（確認） %>
-    <%=f.password_field :name, class:"form-control", id:"pwd"%>
+    <%=f.password_field :password_confirmation, class:"form-control", id:"pwd"%>
   </div>
 
-  <%= f.submit"登録", class:"btn btn-primary btn-lg mt-1 mb-3 mr-5 " %>
+  <%= f.submit"登録", class: "btn btn-primary btn-lg mt-1 mb-3 mr-5 " %>
+<div class="clearfix">
   <button type="submit" class=" float-right btn-link btn d-inline mb-2">パスワードをお忘れの方</button>
 
 <br/>
 <a href="#" class="float-right btn btn-block btn-danger" > ログインはこちら  </a>
 </div>
+</div>
+
 <% end %>
-</body>
+
+<p class="wenitest">ウェニ</p>
+
+</div>

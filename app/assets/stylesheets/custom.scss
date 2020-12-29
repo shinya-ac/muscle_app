@@ -1,7 +1,21 @@
-@import "bootstrap-sprockets";
+
 @import "bootstrap";
 
 /* universal */
+
+
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 100px;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
 
 body {
   padding-top: 60px;
@@ -206,4 +220,10 @@ div.img-hidden {
 
 div.container-m {
   margin-top: 80px;
+ }
+ 
+ 
+ .wenitest{
+   color: red;
+   font-size:30px;
  }
