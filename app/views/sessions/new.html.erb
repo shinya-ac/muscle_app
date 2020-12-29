@@ -21,6 +21,13 @@
     <%=f.label :パスワード %>
     <%=f.password_field :password, class:"form-control", id:"pwd"%>
   </div>
+  
+  
+  <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>ログイン状態を保持する</span>
+  <% end %>
+  
 
   <%= f.submit"ログイン", class: "btn btn-primary btn-lg mt-1 mb-3 mr-5 " %>
 <div class="clearfix">
