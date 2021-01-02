@@ -1,0 +1,16 @@
+
+    <li id="メモ-<%= memo.id %>">
+      <span class="user"><%= link_to memo.user.name, memo.user %></span>
+      <span class="content"><%= memo.title %></span><%= link_to memo.title, memo %>
+      <span class="content"><%= memo.memo %></span>
+      <span class="timestamp">
+      <%= time_ago_in_words(memo.created_at) %> 前に投稿
+      </span>
+      
+      <% if current_user?(memo.user) %>
+      <%= link_to "削除", memo, method: :delete,
+                                       data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+    
+    </li>
+
