@@ -3,7 +3,15 @@
 
 /* universal */
 
+.memotitle{
+  font-size:30px;
+  font-weight:bold;
+  margin-right:10px;
+}
 
+.user_info h1{
+  font-size:30px;
+}
 
 .debug_dump {
   clear: both;
@@ -17,9 +25,7 @@
 
 
 
-body {
-  padding-top: 60px;
-}
+
 
 section {
   overflow: auto;
@@ -122,7 +128,7 @@ p {
   background-color:green;
 }
 
-/*---HOMEテスト*/
+
 /* Made with love by Mutiullah Samim*/
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
@@ -138,6 +144,7 @@ font-family: 'Numans', sans-serif;
 .container{
 height: 100%;
 align-content: center;
+margin-top: 30px;
 }
 
 .card{
@@ -218,10 +225,6 @@ div.img-hidden {
   overflow: hidden;
 }
 
-div.container-m {
-  margin-top: 80px;
- }
- 
  
  .wenitest{
    color: red;
@@ -249,16 +252,27 @@ div.container-m {
 
 /* memos */
 
-.microposts {
+.memos {
   list-style: none;
   padding: 0;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
+  .title{
+    font-size:20px;
+    margin-bottom:5px;
+    margin-top:3px;
+  }
+  .title a{
+  text-decoration: none;
+  transition: color 0.3s;
+  }
+  .title a:hover{
+    color : #FF9966;
+  }
+  .title a:active{
+  color : #FF3300;
   }
   .content {
     display: block;
@@ -273,23 +287,55 @@ div.container-m {
     display: block;
     margin-left: 60px;
   }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
 }
 
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
+
+/* HOME */
+.aboutsv{
+  background-image: image-url('homebg3.png');
+  height:300px;
+  width:100%;
+  background-size:cover;
+  margin-top:100px;
 }
 
-span.image {
-  margin-top: 10px;
-  input {
-    border: 0;
-  }
+.feature{
+  padding:80px 0;
+  background-color:#fff;
+  color:#333;
+}
+
+.feature-wrapper{
+  display:table;
+  width:80%;
+  margin:50px auto 0;
+  table-layout:fixed;
+}
+
+.feature-box{
+  display:table-cell;
+}
+
+.feature-icon{
+  width:130px;
+  height:130px;
+  margin-bottom:30px;
+  border:4px solid;
+  border-radius:50%;
+  color:#f1b400;
+  font-size:5rem;
+  line-height:142px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home h3{
+  font-size:40px;
+  color:#f1b400;
+  
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
 }

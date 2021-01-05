@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+  get 'categories/edit'
   root 'static_pages#home'
   get 'sessions/new'
   get  '/help', to: 'static_pages#help'
@@ -10,4 +12,5 @@ Rails.application.routes.draw do
   delete'/logout',  to: 'sessions#destroy'
   resources :users
   resources :memos
+  resources :categories, except: [:new, :show]
 end

@@ -1,57 +1,60 @@
 <header>
   <div class="container">
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(#F89174,#FFC778);" >
-
-
-
-
-  
-  <%= link_to "MM_APLI", home_path, id: "logo" , class:"navbar-brand mr-5" %>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    
+    
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(#F89174,#FFC778);" >
       
-      <li class="nav-item active mr-5">
-          <%= link_to "Home",   home_path, {class: "nav-link"}  %>
-      </li>
       
-      <li class="nav-item mr-5">
-          <%= link_to "Help",   help_path, {class: "nav-link"}  %>
-      </li>
+      <%= link_to "MM_APLI", home_path, id: "logo" , class:"navbar-brand mr-5" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
       
+          <li class="nav-item active mr-5">
+            <%= link_to "Home",   home_path, {class: "nav-link"}  %>
+          </li>
+          
+          
        
-      <% if logged_in? %>
+          <% if logged_in? %>
+          
+              <li class="nav-item mr-5">
+                <%= link_to "新規メモ",   new_memo_path, {class: "nav-link"}  %>
+              </li>
             
             <div class="dropdown">
               
-              
-              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn dropdown-toggle nav-item mr-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 アカウント
               </button>
               
-              
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><%= link_to "プロフィール", current_user, {class: "dropdown-item"}%></li>
+                <li><%= link_to "メモ一覧", current_user, {class: "dropdown-item"}%></li>
                 <li><%= link_to "設定", edit_user_path(current_user) , {class: "dropdown-item"}%></li>
                 
                 <li class="divider"></li>
                 
-                <li><%= link_to "ログアウト", logout_path, class: 'dropdown-item',  method: :delete %></li>
-                
-                    
+                <li><%= link_to "ログアウト", logout_path, class: 'dropdown-item',  method: :delete,
+                                       data: { confirm: "ログアウトしますか" } %></li>
               </div>
+            
             </div>
             
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      
-      
-    </ul>
-  </div>
-</nav>
+          <% else %>
+            <li class="nav-item active mr-5">
+              <%= link_to "Log in", login_path, {class: "nav-link"} %>
+            </li>
+          <% end %>
+          
+          <li class="nav-item mr-5">
+             <a href="https://youtu.be/2Q_ZzBGPdqE" class="nav-link" target="_blank">HELP!</a>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
   </div>
 </header>

@@ -1,6 +1,10 @@
 class MemosController < ApplicationController
     before_action :correct_user, only: [:show, :destroy]
     
+    def index
+        
+    end
+    
     def show
         @memo = Memo.find(params[:id])
     end
@@ -30,7 +34,7 @@ class MemosController < ApplicationController
     
     
         def memo_params
-            params.require(:memo).permit(:title, :weight, :times, :set, :memo )
+            params.require(:memo).permit(:title, :weight, :times, :set, :memo, :category_id )
         end
     
         def correct_user

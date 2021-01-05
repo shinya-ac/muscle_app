@@ -1,7 +1,48 @@
-<%= @memo.title %>
-<%= @memo.created_at %>
+<nav class="justify-content-end">
+    <%= link_to"メモ一覧へ戻る", current_user, class:"btn btn-primary btn-md mb-5" %>
+</nav>
 
-<%= @memo.weight %>
-<%= @memo.times %>
-<%= @memo.set %>
-<%= @memo.memo %>
+<p class="memotitle"><%= @memo.title %></p>
+
+<table class="table table-hover">
+    <tboby>
+        <tr>
+            <th>重量</th>
+            <td><%= @memo.weight %>kg</td>
+        </tr>
+        
+        <tr>
+            <th>回数</th>
+            <td><%= @memo.times %>回</td>
+        </tr>
+        
+        <tr>
+            <th>セット数</th>
+            <td><%= @memo.set %>セット</td>
+        </tr>
+        
+        <tr>
+            <th>メモ</th>
+            <td><%= simple_format(h( @memo.memo ), {},sanitize: false, wrapper_tag: "div") %> </td >
+        </tr>
+        
+        <tr>
+            <th>メモ作成日</th>
+            <td>
+                <%= @memo.created_at.strftime('%Y/%m/%d') %>
+            </td>
+        </tr>
+        
+        <tr>
+            <th>カテゴリー</th>
+            <td>
+                <%= link_to @memo.category.name, category_path %>
+            </td>
+        </tr>
+        
+        <tr>
+            <th></th>
+            <td></td>
+        </tr>
+    </tboby>
+</table>

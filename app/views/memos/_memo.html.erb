@@ -1,7 +1,6 @@
 
-    <li id="メモ-<%= memo.id %>">
-      <span class="user"><%= link_to memo.user.name, memo.user %></span>
-      <span class="content"><%= memo.title %></span><%= link_to memo.title, memo %>
+    <li id="メモ-<%= memo.id %>" class="mt-3 p-1">
+      <div class="title"><%= link_to memo.title, memo %></div>
       <span class="content"><%= memo.memo %></span>
       <span class="timestamp">
       <%= time_ago_in_words(memo.created_at) %> 前に投稿
