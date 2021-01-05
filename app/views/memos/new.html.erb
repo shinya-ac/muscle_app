@@ -10,6 +10,36 @@
       <br>
     </div>
   </div>
+  
+  <div class="mb-5">
+  <p class="mb-1">OR</p>
+  <%= link_to 'カテゴリーを追加', categories_path, class: 'btn-sm btn-primary' %>
+  </div>
+  
+  <!--
+  <script>
+    $(function() {
+     // フォームに変更があった時のみ表示する
+      $("form").change(function(){
+    // beforeunloadイベント登録
+        $(window).on('beforeunload', function(e) {
+        e.preventDefault();
+        return '記入したメモが破棄される可能性があります。';
+        });  
+      });  
+    });
+ 
+    function onClickSubmit(frm){  
+      // beforeunloadイベント削除
+      $(window).off('beforeunload');
+ 
+      // サブミット
+      frm.action="beforeunload.rb";
+      frm.method="post";
+      frm.submit();
+    }
+  </script>
+  -->
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -55,4 +85,6 @@
   <%= f.submit"保存", class: "btn btn-primary btn-lg mt-1 mb-3 mr-5 " %>
 <% end %>
 
+<% if Rails.env.development? %>
 <p class="wenitest">ウェニ投稿</p>
+<% end %>
