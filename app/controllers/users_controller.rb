@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
   before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update, :destroy, :show]
+  before_action :forbid_test_user, {only: [:edit,:update,:destroy]}
 
   
   def new
@@ -63,6 +64,14 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user) #sessions_helperに定義してある
+    end
+    
+    
+    def forbid_test_user
+      if @user.email == "guest@example.com"
+        flash[:info] = "ゲストユーザーのため変更できません"
+        redirect_to root_path
+      end
     end
     
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/guest', to: 'guest_sessions#create'
   get 'categories/index'
   get 'categories/edit'
   root 'static_pages#home'

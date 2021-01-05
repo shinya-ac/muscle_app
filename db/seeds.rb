@@ -12,9 +12,6 @@ User.create!(name:  "Example User",
              password:              "password",
              password_confirmation: "password",
              admin: true)
-             
-
-
 
 # 追加のユーザーをまとめて生成する
 99.times do |n|
@@ -26,6 +23,14 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+
+User.create!(name:  "ゲストユーザー",
+             email: "guest@example.com",
+             password:              "password",
+             password_confirmation: "password",
+             admin: false)
+
              
 users = User.order(:created_at).take(6)
 50.times do
