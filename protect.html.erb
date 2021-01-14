@@ -17,3 +17,160 @@
  
  </section>
  
+ 
+ 
+ 
+ 
+ 
+ /* Made with love by Mutiullah Samim*/
+ 
+ @import url('https://fonts.googleapis.com/css?family=Numans');
+
+.loginpage html,body{
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.loginpage.container{
+height: 100%;
+align-content: center;
+}
+
+.loginpage.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.loginpage.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+}
+
+.loginpage.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.loginpage.card-header h3{
+color: white;
+}
+
+.loginpage.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.loginpage.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+.loginpageinput:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+
+.loginpage.remember{
+color: white;
+}
+
+.loginpage.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.loginpage.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.loginpage.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.loginpage.links{
+color: white;
+}
+
+.loginpage.links a{
+margin-left: 4px;
+}
+
+.loginpage div.img-hidden {
+  height: 300px;
+  overflow: hidden;
+}
+
+ 
+ -----------------
+ ヘッダー　「アカウント」のなかにドロップダウン入れるバージョン
+ 
+ <header>
+  
+    <nav class="navbar navbar-expand-lg navbar-light " style="background: linear-gradient(#F89174,#FFC778);" >
+      
+      
+      <%= link_to "MM_APLI", home_path, id: "logo" , class:"navbar-brand mr-5" %>
+
+        <ul class="navbar-nav mr-auto">
+      
+          <li class="nav-item active mr-5">
+            <%= link_to "Home",   home_path, {class: "nav-link"}  %>
+          </li>
+          
+          
+       
+          <% if logged_in? %>
+          
+              <li class="nav-item mr-5">
+                <%= link_to "新規メモ",   new_memo_path, {class: "nav-link"}  %>
+              </li>
+            
+            <div class="dropdown">
+              
+              <button class="btn dropdown-toggle nav-item mr-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                アカウント
+              </button>
+              
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><%= link_to "メモ一覧", current_user, {class: "dropdown-item"}%></li>
+                <li><%= link_to "設定", edit_user_path(current_user) , {class: "dropdown-item"}%></li>
+                
+                <li class="divider"></li>
+                
+                <li><%= link_to "ログアウト", logout_path, class: 'dropdown-item',  method: :delete,
+                                       data: { confirm: "ログアウトしますか" } %></li>
+              </div>
+            
+            </div>
+            
+          <% else %>
+            <li class="nav-item active mr-5">
+              <%= link_to "Log in", login_path, {class: "nav-link"} %>
+            </li>
+          <% end %>
+          
+          <li class="nav-item mr-5">
+             <a href="https://youtu.be/2Q_ZzBGPdqE" class="nav-link" target="_blank">HELP!</a>
+          </li>
+          
+        </ul>
+    </nav>
+  
+</header>
+
+-------------------------

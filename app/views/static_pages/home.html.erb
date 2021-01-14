@@ -1,36 +1,38 @@
 <div class="home">
 
 
-	<section class="aboutsv">
+	<section class="homepg">
 		<h1>Muscle Memory</h1>
 		<h2>トレーニングの効率を飛躍させる</h2>
+		<%= link_to "新規登録はこちら",   signup_path, {class: "btn btn-block btn-danger offset-md-5 col-xs-2 col-sm-2 col-md-2 col-lg-2 "}  %>
 	</section>
 	
-	<%= link_to 'ゲストユーザーでログイン', guest_path, method: :post, class: 'btn btn-info mx-auto d-block mt-5'%>
+	<%= link_to 'ゲストユーザーでログイン', guest_path, method: :post, class: 'btn btn-info d-block offset-md-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 mt-5 '%>
+
 	
 	
 	
 
-	<section class="feature">
+	<div class="feature">
 		<h3>特徴</h3>
-		<div class="feature-wrapper row">
-			<div class="feature-box col-md ">
+		<div class="feature-wrapper row hpbox1">
+			<div class="feature-box col-xs-4 col-sm-4 col-md-4 col-lg-4 hpbox2">
 				<i class="feature-icon fas fa-book-open"></i>
-				<div class="feature-title">筋トレログ機能</div>
+				<div class="feature-title mb-3">筋トレログ機能</div>
 					<p>あなたの日々の筋トレの記録をシンプルな形式で残せます。<br>
 					筋トレする際のコツや気をつけるべきこと、感想<br>
 					様々な記録を残してみましょう</p>
 			</div>
 			
-			<div class="feature-box col-md ">
+			<div class="feature-box col-xs-4 col-sm-4 col-md-4 col-lg-4 hpbox3">
 				<i class="feature-icon fas fa-search"></i>
-				<div class="feature-title">検索機能</div>
+				<div class="feature-title mb-3">検索機能</div>
 					<p>「あの時の筋トレのメモどこやったっけ…」<br>
 					当アプリならこのような心配がありません。<br>
 					検索機能により目当てのメモをすぐに探せます。</p>
 			</div>
 			
-			<div class="feature-box col-md ">
+			<div class="feature-box col-xs-4 col-sm-4 col-md-4 col-lg-4 hpbox4">
 				<i class="feature-icon fas fa-cloud-upload-alt"></i>
 				<div class="feature-title">安心</div>
 					<p>当アプリはログインにより使用します。<br>
@@ -39,7 +41,7 @@
 			</div>
 		</div>
 		
-	</section>
+	</div>
 
 	<section class="skills">
 	</section>
